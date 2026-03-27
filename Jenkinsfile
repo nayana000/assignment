@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'node2 }
     parameters {
         choice(name: 'environment', choices: ['dev', 'prod'])
         string(name: 'version', defaultValue: '1.0')
