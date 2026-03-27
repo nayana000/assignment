@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 echo "Building"
-                echo "building in ${params.environment} environment and ${params.version} version" > file.txt
+                sh echo "building in ${params.environment} environment and ${params.version} version" > file.txt
             }
         }
         stage('test') {
