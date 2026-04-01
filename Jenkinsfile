@@ -9,6 +9,7 @@ pipeline {
         */5 * * * * %environment=dev
         */5 * * * * %environment=prod
         ''')
+        pollSCM('*/1 * * * *')
     }
     stages {
         stage('build') {
