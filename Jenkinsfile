@@ -4,6 +4,12 @@ pipeline {
         choice(name: 'environment', choices: ['dev', 'prod'])
         string(name: 'version', defaultValue: '1.0')
     }
+    triggers{
+        parameterizedCron('''
+        */5 * * * * %environment=dev
+        */5 * * * * %environment=prod
+        ''')
+    }
     stages {
         stage('build') {
             steps {
